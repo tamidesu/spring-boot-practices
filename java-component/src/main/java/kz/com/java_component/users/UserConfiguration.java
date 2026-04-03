@@ -25,10 +25,4 @@ public class UserConfiguration {
             ));
         };
     }
-
-    @Bean
-    @Profile("mockMvc")
-    public CommandLineRunner initMockMvc(UserRepository userRepository) {
-        return args -> { /* empty — test creates its own data */ };
-    }
 }

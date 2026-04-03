@@ -46,6 +46,11 @@ public class UsersController {
         userRepository.deleteById(email);
     }
 
+    @GetMapping("/{email}/gravatar")
+    public ResponseEntity<String> getGravatar(@PathVariable String email) {
+        return ResponseEntity.ok(UserGravatar.getGravatarUrlFromEmail(email));
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
