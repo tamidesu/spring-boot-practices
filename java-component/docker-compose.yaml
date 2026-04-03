@@ -1,0 +1,20 @@
+#version: "3.1"
+#services:
+#  mongo:
+#    image: mongo
+#    restart: always
+#    environment:
+#      MONGO_INITDB_DATABASE: retrodb
+#    ports:
+#      - "27017:27017"
+version: "3.1"
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: usersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5550:5432"    # host:container — 5550 on your machine, 5432 inside container
