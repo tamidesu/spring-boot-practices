@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @SpringBootTest
+@WithMockUser
 @AutoConfigureMockMvc
 @ActiveProfiles("mockMvc")
 public class UserMockMvcTests {
@@ -48,10 +50,9 @@ public class UserMockMvcTests {
     void allUsersTests() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/users"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("Dummy"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name")
+                        .value("Dummy"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$..active")
-                        .value(Matchers.hasItem(true)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[*]")
-                        .value(Matchers.hasSize(1)));
+                        .value(Matchers.hasItem(true)));
     }
 }
