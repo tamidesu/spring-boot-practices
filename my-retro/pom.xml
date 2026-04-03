@@ -110,7 +110,19 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- WebJars locator — needed for /webjars/** to work -->
+		<!-- OAuth2 Client -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-client</artifactId>
+		</dependency>
+
+		<!-- OAuth2 Resource Server — needed for oauth2ResourceServer().jwt() in WebFlux -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+
+		<!-- WebJars locator -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>

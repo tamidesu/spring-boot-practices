@@ -1,25 +1,53 @@
+## Server — runs on 8181 for this version
+server:
+  port: ${PORT:8181}
+
+oauth2:
+  server:
+    port: ${OAUTH2_PORT:9000}
+
+## H2
 spring:
   h2:
     console:
-      enabled: true
+      enabled: false
   datasource:
     generate-unique-name: false
     name: test-db
   jpa:
     show-sql: true
+
+  ## Authorization Server JWT
   security:
     oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+
+      ## Client Registration
       client:
         registration:
-          github:
-            client-id: ${GITHUB_CLIENT_ID}
-            client-secret: ${GITHUB_CLIENT_SECRET}
+          users-client-authorization-code:
+            provider: spring
+            client-id: users-client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8181/login/oauth2/code/{registrationId}"
             scope:
-              - user:email
-              - https://github.com/login/oauth/authorize
+              - openid
+              - profile
+              - users.read
+              - users.write
+            client-name: users-client-authorization-code
 
+        ## Provider — points to our oauth2-server
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
+
+## Logging
 logging:
   level:
     org:
       springframework:
-        security: DEBUG
+        security: TRACE
