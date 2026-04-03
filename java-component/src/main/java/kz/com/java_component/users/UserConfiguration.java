@@ -23,6 +23,28 @@ public class UserConfiguration {
                     "https://www.gravatar.com/avatar/f07f7e553264c9710105edebe6c465e7?d=wavatar",
                     "aw2s0me", List.of(UserRole.USER, UserRole.ADMIN), true
             ));
+
+            userRepository.save(new User(
+                    "admin", "Admin",
+                    UserGravatar.getGravatarUrlFromEmail("admin"),
+                    "admin",
+                    List.of(UserRole.USER, UserRole.ADMIN),
+                    true
+            ));
+            userRepository.save(new User(
+                    "manager@email.com", "Manager",
+                    UserGravatar.getGravatarUrlFromEmail("manager@email.com"),
+                    "aw2s0meR!",
+                    List.of(UserRole.USER, UserRole.ADMIN),
+                    true
+            ));
+            userRepository.save(new User(
+                    "user@email.com", "User",
+                    UserGravatar.getGravatarUrlFromEmail("user@email.com"),
+                    "aw2s0meR!",
+                    List.of(UserRole.USER),
+                    true
+            ));
         };
     }
 }
