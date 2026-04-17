@@ -1,0 +1,17 @@
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\advice\RetroBoardAdvice.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\board\Card.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\board\CardType.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\board\RetroBoard.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\client\User.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\client\UserRole.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\client\UsersClient.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\config\MyRetroConfiguration.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\config\MyRetroProperties.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\config\UsersProperties.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\exception\CardNotFoundException.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\exception\RetroBoardNotFoundException.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\exception\RetroBoardResponseEntityExceptionHandler.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\MyRetroApplication.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\persistence\RetroBoardRepository.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\service\RetroBoardService.java
+C:\Users\bubuk\IdeaProjects\java-EE-subject\my-retro\src\main\java\kz\com\my_retro\web\RetroBoardController.java

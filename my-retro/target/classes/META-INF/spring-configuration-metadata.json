@@ -1,0 +1,20 @@
+{
+  "groups": [
+    {
+      "name": "service",
+      "type": "kz.com.my_retro.config.MyRetroProperties",
+      "sourceType": "kz.com.my_retro.config.MyRetroProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "service.users",
+      "type": "kz.com.my_retro.config.UsersConfiguration",
+      "sourceType": "kz.com.my_retro.config.MyRetroProperties"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}
