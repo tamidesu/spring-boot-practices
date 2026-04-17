@@ -7,14 +7,24 @@
 #      MONGO_INITDB_DATABASE: retrodb
 #    ports:
 #      - "27017:27017"
-version: "3.1"
+#version: "3.1"
+#services:
+#  postgres:
+#    image: postgres:latest
+#    restart: always
+#    environment:
+#      POSTGRES_DB: usersdb
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: password
+#    ports:
+#      - "5550:5432"    # host:container — 5550 on your machine, 5432 inside container
+version: "3"
 services:
-  postgres:
-    image: postgres:latest
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:management-alpine
     restart: always
-    environment:
-      POSTGRES_DB: usersdb
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
     ports:
-      - "5550:5432"    # host:container — 5550 on your machine, 5432 inside container
+      - "15672:15672"
+      - "5672:5672"
