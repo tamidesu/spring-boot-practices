@@ -96,24 +96,16 @@
 			<artifactId>mongodb</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- Security (Reactive WebFlux) -->
+		<!-- RabbitMQ / AMQP -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
-		<!-- Security Test -->
+		<!-- Jackson LocalDateTime serialization -->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- WebJars locator — needed for /webjars/** to work -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>webjars-locator-core</artifactId>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
 
 	</dependencies>
