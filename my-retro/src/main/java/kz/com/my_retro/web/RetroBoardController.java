@@ -2,6 +2,7 @@ package kz.com.my_retro.web;
 
 import kz.com.my_retro.board.Card;
 import kz.com.my_retro.board.RetroBoard;
+import kz.com.my_retro.client.User;
 import kz.com.my_retro.service.RetroBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,5 +59,10 @@ public class RetroBoardController {
     public Mono<Void> deleteCardFromRetroBoard(@PathVariable UUID uuid,
                                                @PathVariable UUID uuidCard) {
         return retroBoardService.removeCardByUUID(uuid, uuidCard);
+    }
+
+    @GetMapping("/users")
+    public Flux<User> getAllUsers() {
+        return retroBoardService.getAllUsers();
     }
 }

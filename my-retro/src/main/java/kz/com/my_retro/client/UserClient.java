@@ -1,38 +1,19 @@
 package kz.com.my_retro.client;
 
-import kz.com.my_retro.config.MyRetroProperties;
-import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.service.annotation.GetExchange;
+import org.springframework.web.service.annotation.HttpExchange;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class UserClient {
+@HttpExchange(url = "/users",
+        accept = "application/json",
+        contentType = "application/json")
+public interface UserClient {
 
-    private final WebClient webClient;
+    @GetExchange
+    Flux<User> getAllUsers();
 
-    public UserClient(WebClient.Builder webClientBuilder,
-                      MyRetroProperties props) {
-        this.webClient = webClientBuilder
-                .baseUrl(props.getUsers().getServer())
-                .defaultHeaders(headers ->
-                        headers.setBasicAuth(
-                                props.getUsers().getUsername(),
-                                props.getUsers().getPassword()
-                        )
-                )
-                .build();
-    }
-
-    public Mono<User> getUserInfo(String email) {
-        return webClient.get()
-                .uri("/users/{email}", email)
-                .retrieve()
-                .bodyToMono(User.class);
-    }
-
-    public Mono<String> getUserGravatar(String email) {
-        return webClient.get()
-                .uri("/users/{email}/gravatar", email)
-                .retrieve()
-                .bodyToMono(String.class);
-    }
+    @GetExchange("/{email}")
+    Mono<User> getById(@PathVariable String email);
 }
